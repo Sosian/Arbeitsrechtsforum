@@ -1,8 +1,8 @@
 var pass_entered;
-var password = "test"
+var enterpassword = "arbeitsrechtsforum"
 
 
-while (pass_entered != password)
+while (pass_entered != enterpassword)
 {
 	pass_entered = prompt("Bitte geben sie ein Passwort ein: ");
 }
