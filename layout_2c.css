@@ -6,7 +6,7 @@
 
 /*Set the background image*/
 body {
-	background-image: url("Media/background.png");
+	background-image: url("media/background.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -335,5 +335,3 @@ table tr:hover td {
 	position:relative;
 	top:1px;
 }
-/* This button was generated using CSSButtonGenerator.com */
-/* This button was generated using CSSButtonGenerator.com */
