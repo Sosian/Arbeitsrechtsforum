@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-	<meta content="True" name="HandheldFriendly">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
 	
 	<title>Wiener Arbeitsrechtsforum</title>
-	<link href="layout_2c.css" rel="stylesheet">
+	<link href="css/general.css" rel="stylesheet">
 	<link rel="icon" 
       type="image/png" 
       href="favicon.ico">
@@ -15,54 +15,81 @@
 
 <body>
 	 
-	<div id="wrapper" align="center">
-	
-		<div id="header">
-			<div id="img_header"><a href="index.html"><img alt="logo" id="logo" src="media/logo.png" /></a></div>		
-			<div id="title_header">
-				<h2><span id="titel">Symposium</span><span id="datum">7.6.2016</span></h2>
-			</div>
-		</div>
-		<br />
+	<div class="container">
+		<div class="pull-left col-lg-4"><a href="index.html"><img alt="logo" id="logo" src="media/logo.png" /></a></div>					
 		
-		<div id="content">
-			<div id="left">
-				<h3><span id="thematitel">Die Tücken des Bestandschutzes</span></h3>
-				<p id="thematext">Das 2.Symposium findet am 7.6.2016 ab 9:00 im Sitzungssaal der Akademie der Wissenschaften statt. Neben Dr. Obereder konnten als Referentinnen und Referenten das Mitglied des VfGH, Univ.Prof. Dr. Holoubek,  Univ.Prof. Hofrat Dr. Kodek, Univ.Ass.<sup>in</sup> MMag.<sup>a</sup> Dr.<sup>in</sup> Niksova sowie die Richterin am BAG Dr.<sup>in</sup> Winter gewonnen werden.
+		<div class="header clearfix col-lg-8">
+			<h2><span class="pull-left">Symposium</span><span class="pull-right">7.6.2016</span></h2>
+		</div>
+		
+		<div class="row content">
+			<div class="col-lg-8">
+				<h3>Die Tücken des Bestandschutzes</h3>
+				<p>Das 2.Symposium findet am 7.6.2016 ab 9:00 im Sitzungssaal der Akademie der Wissenschaften statt. Neben Dr. Obereder konnten als Referentinnen und Referenten das Mitglied des VfGH, Univ.Prof. Dr. Holoubek,  Univ.Prof. Hofrat Dr. Kodek, Univ.Ass.<sup>in</sup> MMag.<sup>a</sup> Dr.<sup>in</sup> Niksova sowie die Richterin am BAG Dr.<sup>in</sup> Winter gewonnen werden.
 					<br /><br />
 					Der genaue Tagungsablauf sowie die Referatsthemen werden demnächst bekanntgegeben.
 				</p>
+				
+				<table class="table table-bordered table-hover table-striped">
+					<thead>
+					<tr>
+						<th>Thema</th>
+						<th>Vortragende/r</th>
+						<th>Präsentation</th>
+					</tr>
+					<thead>
+					
+					<tbody>
+					<tr>
+						<td>Testvortrag</td>
+						<td>Tester</td>
+						<td><a href="pdf/test_pdf.html">Ansehen<a/>	
+					</tr>
+					<tr>
+						<td>Testvortrag</td>
+						<td>Tester</td>
+						<td><a class="text-muted" data-toggle="tooltip" data-placement="top" title="Wird nach 7.6.2016 veröffentlicht">Ansehen<a/>
+					</tr>
+					</tbody>
+				</table>
 			</div>
 			
-			<div id="right">
-				<div id="ort_div">
-					<h4>Ort:</h4>
-					<span id="ort">Akademie der Wissenschaften<br />
-						Sitzungssaal <br />
-						Sonnenfelsgasse 19<br />
-						1010 Wien</span>
-				</div>
-				
-				<div id="anmeldung_div">
-					<h4>Anmeldung:</h4>
-					<span id="anmeldung">Bitte schicken Sie Ihre Anmeldung an 
-					<a href="mailto:wiener.arbeitsrechtsforum@jus.at">wiener.arbeitsrechtsforum@jus.at</a></span>
-					<br />
-					<br />Oder per Telefon: 01 406 05 51 / 11
-					<br />
-					<br />
-					<span id="disclaimer">Die zugesandten Daten werden ausschließlich für die Organisation 
-					der Veranstaltung verwendet und nicht an Dritte weitergegeben.</span>
-				</div>
-				
-			</div>
+			<div class="col-lg-4">
+				<h4>Ort:</h4>
+					Akademie der Wissenschaften<br />
+					Sitzungssaal <br />
+					Dr. Ignaz Seipl Platz 2<br />
+					1010 Wien
 			
-			<div id="footer" align="center">
-			<span id="footer_back">
-				<span class="link"><a href="impressum.html">Impressum</a></span>
+				<h4>Datum und Zeit:</h4>
+				7.6.2016 <br />09:00 - 17:00 Uhr
+				
+				<h4>Tagesgebühr:</h4>
+				<span>90 €</span>
+				
+				<h4>Anmeldung:</h4>
+				Bitte schicken Sie Ihre Anmeldung an 
+				<a href="mailto:wiener.arbeitsrechtsforum@jus.at">wiener.arbeitsrechtsforum@jus.at</a>
+				<br />
+				<br />Oder per Telefon: 01 406 05 51 / 11
+				<br />
+				<br />
+				Die zugesandten Daten werden ausschließlich für die Organisation 
+				der Veranstaltung verwendet und nicht an Dritte weitergegeben.
+			</div>			
+		</div>
 
-			</span>
-			</div>
+		<footer class="footer">
+			<span class="link"><a href="impressum.html">Impressum</a></span>
+		</footer>
 	</div>
-	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	</script>
 </body>
