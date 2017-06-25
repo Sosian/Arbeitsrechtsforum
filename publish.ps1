@@ -10,8 +10,8 @@ New-Item -ItemType directory -Path $PathToNewFolder
 
 Copy-Item .\* $PathToNewFolder -Recurse
 
-Remove-Item $PathToNewFolder\.git
 Remove-Item $PathToNewFolder\publish.ps1
+Remove-Item $PathToNewFolder\.git -Recurse -Force
 
 $ArchivePath = "..\Versendete_Versionen\$($NameOfNewFolder).zip"
 Compress-Archive -Path $PathToNewFolder -DestinationPath $ArchivePath
