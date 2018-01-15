@@ -3,10 +3,7 @@ body {
 	padding-top: 20px;
 	padding-bottom: 20px;
   
-	/*Set the background image*/  
-	background-image: url("../media/background.png");
-	background-repeat: no-repeat;
-	background-position: center;
+
 }
 
 /*override bootstrap so left and right column align vertically*/
@@ -39,12 +36,10 @@ table{
   padding-left: 15px;
 }
 
-/* Custom page header */
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+.active {
+  background-color: #e7e7e7;
+   background-clip: padding-box;
 }
-
 /* Make the masthead heading the same height as the navigation */
 .header {
   margin-top: 0;
@@ -65,6 +60,11 @@ table{
   margin: 40px 0;
   margin-top: 28px;
 
+	/*Set the background image*/  
+	background-image: url("../media/background.png");
+	background-repeat: no-repeat;
+	background-position: top;
+  padding-bottom: 15%
 }
 
 /* Customize container */
@@ -73,6 +73,14 @@ table{
     max-width: 75%;
   }
 }
+
+/* Customize container */
+@media (max-width: 1200px) {
+  .navbar {
+    margin-top: 10px;
+  }
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -87,4 +95,34 @@ table{
   .header {
     margin-bottom: 30px;
   }
+}
+
+.nav>li>h3>a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+}
+
+.nav>li:not(.active):hover {
+  background-color: #D2D2D2;
+   background-clip: padding-box;
+}
+
+
+.nav>li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.titel-startseite {
+  text-align: center;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.glyphicon{
+    font-size: 2.5em;
 }
