@@ -1,3 +1,9 @@
+$isClean = git status --porcelain | Out-String
+
+if($isClean){
+  throw "Git repository is not cleasdan"
+}
+
 $CurrentDate = Get-Date
 $TagString = "Sent_$($CurrentDate.Day).$($CurrentDate.Month).$($CurrentDate.Year)"
 git tag -a $TagString -m $TagString
