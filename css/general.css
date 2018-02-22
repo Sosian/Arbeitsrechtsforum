@@ -27,6 +27,10 @@ h4 {
     padding-top: 20px;
 }
 
+.icon-red {
+    color: #EE1C22;
+}
+
 #logo{
 	width:100%;
 }
@@ -84,7 +88,24 @@ h4 {
   .container {
     max-width: 75%;
   }
+  
+  .details {
+    max-width: 60%;
+  }
+  
+  .text-slightly-lower{
+    margin-top: 1.5em;
+  }
 }
+
+@media (min-width: 992px) 
+{ 
+  .text-slightly-lower{
+    margin-top: 1.5em;
+  }
+}
+
+
 
 /* Customize container */
 @media (max-width: 1200px) {
