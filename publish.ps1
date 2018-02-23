@@ -1,7 +1,7 @@
 $isClean = git status --porcelain | Out-String
 
 if($isClean){
-  throw "Git repository is not cleasdan"
+  throw "Git repository is not clean"
 }
 
 $CurrentDate = Get-Date
