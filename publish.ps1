@@ -6,10 +6,27 @@ if($isClean){
 
 $CurrentDate = Get-Date
 $TagString = "Sent_$($CurrentDate.Day).$($CurrentDate.Month).$($CurrentDate.Year)"
+$SecondVersionForTheDay = $FALSE
+
+
+if ((git describe $Branchname --match $TagString --abbrev=0 2>&1) -and $?)
+{
+    $TagString = "$($TagString)_PartTwo"
+    $SecondVersionForTheDay = $TRUE
+}
+
 git tag -a $TagString -m $TagString
 
 
 $NameOfNewFolder = "website_arbeitsrechtsforum_$($CurrentDate.Day)_$($CurrentDate.Month)_$($CurrentDate.Year)"
+
+
+if ($SecondVersionForTheDay)
+{
+    $NameOfNewFolder = "$($NameOfNewFolder)_PartTwo"
+}
+
+
 $PathToNewFolder = "..\$($NameOfNewFolder)"
 
 New-Item -ItemType directory -Path $PathToNewFolder
