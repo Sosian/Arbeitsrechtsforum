@@ -2,8 +2,6 @@
 body {
 	padding-top: 20px;
 	padding-bottom: 20px;
-  
-
 }
 
 /*override bootstrap so left and right column align vertically*/
@@ -52,10 +50,6 @@ h4 {
   padding-left: 15px;
 }
 
-.active {
-  background-color: #e7e7e7;
-   background-clip: padding-box;
-}
 /* Make the masthead heading the same height as the navigation */
 .header {
   margin-top: 0;
@@ -81,6 +75,40 @@ h4 {
 	background-position: top;
 }
 
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #D2D2D2;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #e7e7e7;
+  color: black;
+}
+
+.topnav a:hover {
+  background-color: #D2D2D2;
+}
+
+.topnav {
+  background-color: #f8f8f8;
+  color: black;
+  overflow: hidden;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -103,12 +131,22 @@ h4 {
   }
 }
 
-
-
 /* Customize container */
 @media (max-width: 1200px) {
-  .navbar {
-    margin-top: 10px;
+  .topnav {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .topnav a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
 
@@ -122,38 +160,9 @@ h4 {
     padding-right: 0;
     padding-left: 0;
   }
+
    /*Space out the masthead*/ 
   .header {
     margin-bottom: 30px;
   }
-}
-
-.nav>li>h3>a {
-  color: black;
-  text-decoration: none;
-  display: flex;
-}
-
-.nav>li:not(.active):hover {
-  background-color: #D2D2D2;
-   background-clip: padding-box;
-}
-
-
-.nav>li {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.titel-startseite {
-  text-align: center;
-}
-
-.vertical-center {
-    display: flex;
-    align-items: center;
-}
-
-.glyphicon{
-    font-size: 2.5em;
 }
