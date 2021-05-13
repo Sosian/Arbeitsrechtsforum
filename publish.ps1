@@ -17,6 +17,13 @@ if ((git describe $Branchname --match $TagString --abbrev=0 2>&1) -and $?)
 
 git tag -a $TagString -m $TagString
 
+$AllFolder = Get-ChildItem -Path .\Arbeitsrechtsforum -Recurse -Directory -Force -ErrorAction SilentlyContinue | Select-Object -expand Name
+
+if($AllFolder -cmatch "[A-Z]")
+{
+  throw "Uppercase Folder found"
+}
+
 
 $NameOfNewFolder = "website_arbeitsrechtsforum_$($CurrentDate.Day)_$($CurrentDate.Month)_$($CurrentDate.Year)"
 
@@ -28,6 +35,8 @@ if ($SecondVersionForTheDay)
 
 
 $PathToNewFolder = "..\$($NameOfNewFolder)"
+
+
 
 New-Item -ItemType directory -Path $PathToNewFolder
 
