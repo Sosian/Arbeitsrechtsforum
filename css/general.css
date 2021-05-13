@@ -115,25 +115,6 @@ button:hover {
   margin-top: 10px;
 }
 
-.coronaButton{
-  border-color: #ed1c24;
-  border-style: solid;
-  border-radius: 25px;
-  background-color:white;
-  color: black;
-  font-size: 32px;
-  font-weight: bold;
-  border-width: 4px;
-  margin: 0 auto;
-  text-align: center;
-  display: block;
-}
-
-.coronaButton:hover{
-  background-color: #D2D2D2;
-  color: black;
-  text-decoration: none;
-}
 
 /* Customize container */
 @media (min-width: 768px) {
