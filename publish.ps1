@@ -49,7 +49,7 @@ if (Test-Path $PathToNewFolder\.git)
   Remove-Item $PathToNewFolder\.git -Recurse -Force
 }
 
-$ArchivePath = "..\Versendete_Versionen\$($NameOfNewFolder).zip"
+$ArchivePath = ".\Versendete_Versionen\$($NameOfNewFolder).zip"
 Compress-Archive -Path $PathToNewFolder -DestinationPath $ArchivePath
 
 Remove-Item -Recurse -Force $PathToNewFolder
