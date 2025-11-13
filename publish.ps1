@@ -43,6 +43,8 @@ New-Item -ItemType directory -Path $PathToNewFolder
 Copy-Item .\* $PathToNewFolder -Recurse
 
 Remove-Item $PathToNewFolder\publish.ps1
+Remove-Item $PathToNewFolder\Versendete_Versionen
+
 
 if (Test-Path $PathToNewFolder\.git)
 {
