@@ -5,7 +5,7 @@ if($isClean){
 }
 
 $CurrentDate = Get-Date
-$TagString = "Sent_$($CurrentDate.Day).$($CurrentDate.Month).$($CurrentDate.Year)"
+$TagString = "Sent_$($CurrentDate.Year).$($CurrentDate.Month).$($CurrentDate.Day)"
 $SecondVersionForTheDay = $FALSE
 
 
@@ -25,7 +25,7 @@ if($AllFolder -cmatch "[A-Z]")
 }
 
 
-$NameOfNewFolder = "website_arbeitsrechtsforum_$($CurrentDate.Day)_$($CurrentDate.Month)_$($CurrentDate.Year)"
+$NameOfNewFolder = "website_arbeitsrechtsforum_$($CurrentDate.Year)_$($CurrentDate.Month)_$($CurrentDate.Day)"
 
 
 if ($SecondVersionForTheDay)
