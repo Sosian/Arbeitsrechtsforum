@@ -179,3 +179,25 @@ button:hover {
     margin-bottom: 30px;
   }
 }
+
+/* Bootstrap puts white-space:nowrap on every cell inside .table-responsive
+   below 768px. That suits narrow numeric tables, but our Vortrag titles are
+   long sentences, so it stretched the table to ~1000px and forced a lot of
+   sideways scrolling. Let the text wrap again; the .table-responsive wrapper
+   still catches anything that genuinely does not fit. */
+@media screen and (max-width: 767px) {
+
+  .table-responsive>.table>thead>tr>th,
+  .table-responsive>.table>tbody>tr>td {
+    white-space: normal;
+  }
+
+  /* Let the long compounds ("Arbeitskräfteüberlassung") break, otherwise they
+     alone keep the table wider than a phone screen. Only in the body cells -
+     breaking the short headers just turns "Präsentation" into "Prä sent atio n". */
+  .table-responsive>.table>tbody>tr>td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
