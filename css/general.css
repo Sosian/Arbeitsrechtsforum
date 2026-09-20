@@ -192,12 +192,26 @@ button:hover {
     white-space: normal;
   }
 
-  /* Let the long compounds ("Arbeitskräfteüberlassung") break, otherwise they
-     alone keep the table wider than a phone screen. Only in the body cells -
-     breaking the short headers just turns "Präsentation" into "Prä sent atio n". */
+  /* The long compounds ("Arbeitskräfteüberlassung") are on their own wider than
+     a column on a phone, so they have to be split somewhere. hyphens:auto lets
+     the browser do it properly, at syllable boundaries and with a hyphen - it
+     needs the lang="de" on <html> and a German dictionary. Where there is no
+     dictionary nothing happens, so overflow-wrap stays as the fallback and
+     breaks mid-word instead. Both only in the body cells - breaking the short
+     headers as well just turns "Präsentation" into "Prä sent atio n". */
   .table-responsive>.table>tbody>tr>td {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+    /* The column only actually gets narrower from a property that feeds into
+       min-content sizing. overflow-wrap:break-word does not, so it is just the
+       oldest fallback here; word-break:break-word covers browsers without
+       "anywhere" (Safari below 15.4), and overflow-wrap:anywhere is the
+       standard one and has to stay last so it wins where it is supported. */
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
+    overflow-wrap: anywhere;
   }
 }
