@@ -44,6 +44,7 @@ Copy-Item .\* $PathToNewFolder -Recurse
 
 Remove-Item $PathToNewFolder\publish.ps1
 Remove-Item $PathToNewFolder\Versendete_Versionen -Recurse
+Remove-Item $PathToNewFolder\Flyer -Recurse
 
 
 if (Test-Path $PathToNewFolder\.git)
