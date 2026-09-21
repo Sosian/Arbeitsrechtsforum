@@ -1,0 +1,24 @@
+name: check
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    # Case-sensitive filesystem is the whole point: it catches href/src/data
+    # values that only work on Windows because "WIener" and "Wiener" are the
+    # same file there but two different files once this is actually served.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # Both checkers are pure standard library on purpose - no pip install,
+      # no npm, so they run unmodified on a bare ubuntu-latest runner.
+      - name: Check links, files and content consistency
+        run: python tests/check.py
+
+      - name: Check HTML markup
+        run: python tests/check_html.py
