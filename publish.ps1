@@ -19,6 +19,20 @@ if (Invoke-Git status --porcelain) {
   throw "Git repository is not clean"
 }
 
+# Plain `python` returning non zero does not stop the script on its own
+# (same reason Invoke-Git exists above), so $LASTEXITCODE is checked after
+# each one. Run before anything below creates the tag, the staging folder
+# or the zip, so a red check blocks the publish instead of just polluting it.
+python tests\check.py
+if ($LASTEXITCODE -ne 0) {
+  throw "Website-Prüfungen fehlgeschlagen - es wird nichts veröffentlicht"
+}
+
+python tests\check_html.py
+if ($LASTEXITCODE -ne 0) {
+  throw "Website-Prüfungen fehlgeschlagen - es wird nichts veröffentlicht"
+}
+
 # Zero padded, otherwise the archives sort wrong: 2026_9_20 comes before
 # 2026_12_03 in a file listing.
 $CurrentDate = Get-Date
