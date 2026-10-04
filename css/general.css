@@ -422,8 +422,12 @@ h4 {
   }
 }
 
-/* Customize container */
-@media (max-width: 1200px) {
+/* The navigation stacks wherever the columns stack. The columns start
+   floating at min-width:1200px, so this has to stop just below it: at a plain
+   1200px both queries would match at once and the navigation would stack
+   beside columns already side by side, and at 1199px a fractional viewport
+   width such as 1199.5px would fall between the two and do the opposite. */
+@media (max-width: 1199.98px) {
   .topnav {
     position: relative;
     margin-top: 20px;
