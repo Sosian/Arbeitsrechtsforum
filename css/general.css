@@ -324,6 +324,59 @@ th {
   }
 }
 
+/* Tooltips, shown by js/tooltip.js above elements with data-toggle="tooltip" */
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  padding: 5px 0;
+  margin-top: -3px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  line-break: auto;
+  opacity: 0;
+  transition: opacity .15s linear;
+}
+
+.tooltip.in {
+  opacity: .9;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  border-color: transparent;
+  border-top-color: #000;
+  border-style: solid;
+  border-width: 5px 5px 0;
+}
+
 /* ==========================================================================
    Site styles
    ========================================================================== */
