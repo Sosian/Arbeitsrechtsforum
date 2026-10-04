@@ -8,23 +8,10 @@
    ========================================================================== */
 
 /* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
+
 
 body {
   margin: 0;
-}
-
-a {
-  background-color: transparent;
-}
-
-a:active,
-a:hover {
-  outline: 0;
 }
 
 sup {
@@ -35,22 +22,9 @@ sup {
   top: -.5em;
 }
 
-img {
-  border: 0;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
 table {
   border-spacing: 0;
   border-collapse: collapse;
-}
-
-td,
-th {
-  padding: 0;
 }
 
 /* Printing: black text on white, link targets written out after the link */
@@ -116,7 +90,8 @@ th {
 }
 
 html {
-  font-size: 10px;
+  /* iOS otherwise enlarges text in landscape on its own */
+  -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -330,11 +305,6 @@ th {
     margin-bottom: 0;
   }
 
-  .table-responsive>.table>thead>tr>th,
-  .table-responsive>.table>tbody>tr>td {
-    white-space: nowrap;
-  }
-
   .table-responsive>.table-bordered {
     border: 0;
   }
@@ -427,31 +397,8 @@ h4 {
   background-color: #ededed;
 }
 
-.table-light-grey-background {
-  background-color: #f9f9f9;
-}
-
-
-.padding-top-glyph {
-  padding-top: 10px;
-}
-
-.padding-top-lower-glyph {
-  padding-top: 20px;
-}
-
-.icon-red {
-  color: #EE1C22;
-}
-
 #logo {
   width: 100%;
-}
-
-#frame {
-  width: 100%;
-  height: 600px;
-  border: 0;
 }
 
 /* Make table hover darker/more visible */
@@ -459,25 +406,10 @@ h4 {
   background-color: #D2D2D2;
 }
 
-button:hover {
-  background-color: #D2D2D2;
-}
-
-.header,
+/* Custom page footer */
 .footer {
   padding-right: 15px;
   padding-left: 15px;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-}
-
-/* Custom page footer */
-.footer {
   color: #777;
   border-top: 1px solid #e5e5e5;
   text-align: center;
@@ -518,10 +450,6 @@ button:hover {
   color: black;
 }
 
-.topnav a:hover {
-  background-color: #D2D2D2;
-}
-
 .topnav {
   background-color: #f8f8f8;
   color: black;
@@ -536,22 +464,14 @@ button:hover {
     max-width: 80%;
   }
 
-  .details {
-    max-width: 60%;
-  }
-
-  .text-slightly-lower {
-    margin-top: 1.5em;
-  }
-
   .table {
     width: 95%;
   }
-}
 
-@media (min-width: 992px) {
-  .text-slightly-lower {
-    margin-top: 1.5em;
+  /* Remove the padding we set earlier */
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
@@ -576,34 +496,13 @@ button:hover {
 }
 
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-
-  /*Remove the padding we set earlier*/
-  .header,
-  .content,
-  .footer {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  /*Space out the masthead*/
-  .header {
-    margin-bottom: 30px;
-  }
-}
-
-/* The base styles put white-space:nowrap on every cell inside .table-responsive
-   below 768px. That suits narrow numeric tables, but our Vortrag titles are
-   long sentences, so it stretched the table to ~1000px and forced a lot of
-   sideways scrolling. Let the text wrap again; the .table-responsive wrapper
-   still catches anything that genuinely does not fit. */
+/* Bootstrap used to put white-space:nowrap on every cell inside
+   .table-responsive below 768px, which stretched our long Vortrag titles to a
+   table of ~1000px and a lot of sideways scrolling, so this file set it back
+   to normal. Neither is here any more: cells wrap on their own, and the
+   .table-responsive wrapper still catches anything that genuinely does not
+   fit. */
 @media screen and (max-width: 767px) {
-
-  .table-responsive>.table>thead>tr>th,
-  .table-responsive>.table>tbody>tr>td {
-    white-space: normal;
-  }
 
   /* The long compounds ("Arbeitskräfteüberlassung") are on their own wider than
      a column on a phone, so they have to be split somewhere. hyphens:auto lets
