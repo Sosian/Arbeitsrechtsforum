@@ -1,10 +1,423 @@
+/* ==========================================================================
+   Base styles
+   The site used to load all of Bootstrap 3.3.5 (plus jQuery for its JS) for
+   the handful of things below. These are the Bootstrap rules the pages
+   actually use, copied with their original values and in their original
+   order, so the site looks exactly as it did. The site's own styles follow
+   further down and override some of them, as they did before.
+   ========================================================================== */
+
+/* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+  top: -.5em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/* Printing: black text on white, link targets written out after the link */
+@media print {
+  *,
+  *:before,
+  *:after {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* Scaffolding */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h3 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+h1, h2, h3,
+.h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h1 { font-size: 36px; }
+h2 { font-size: 30px; }
+h3, .h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; }
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #777;
+}
+
+/* Grid: a centred container, rows, and the col-lg-* columns, which sit side
+   by side from 1200px up and stack below that */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.container:before,
+.container:after,
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+
+.container:after,
+.row:after {
+  clear: both;
+}
+
+.col-lg-4,
+.col-lg-6,
+.col-lg-8 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 1200px) {
+  .col-lg-4,
+  .col-lg-6,
+  .col-lg-8 {
+    float: left;
+  }
+
+  .col-lg-8 {
+    width: 66.66666667%;
+  }
+
+  .col-lg-6 {
+    width: 50%;
+  }
+
+  .col-lg-4 {
+    width: 33.33333333%;
+  }
+}
+
+/* Tables */
+table {
+  background-color: transparent;
+}
+
+th {
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+
+.table>thead>tr>th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+
+.table>thead:first-child>tr:first-child>th {
+  border-top: 0;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>td {
+  border: 1px solid #ddd;
+}
+
+.table-bordered>thead>tr>th {
+  border-bottom-width: 2px;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-hover>tbody>tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Tables scroll sideways on their own instead of widening the page */
+.table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+
+  .table-responsive>.table {
+    margin-bottom: 0;
+  }
+
+  .table-responsive>.table>thead>tr>th,
+  .table-responsive>.table>tbody>tr>td {
+    white-space: nowrap;
+  }
+
+  .table-responsive>.table-bordered {
+    border: 0;
+  }
+
+  .table-responsive>.table-bordered>thead>tr>th:first-child,
+  .table-responsive>.table-bordered>tbody>tr>td:first-child {
+    border-left: 0;
+  }
+
+  .table-responsive>.table-bordered>thead>tr>th:last-child,
+  .table-responsive>.table-bordered>tbody>tr>td:last-child {
+    border-right: 0;
+  }
+
+  .table-responsive>.table-bordered>tbody>tr:last-child>td {
+    border-bottom: 0;
+  }
+}
+
+/* Tooltips, shown by js/tooltip.js above elements with data-toggle="tooltip" */
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  padding: 5px 0;
+  margin-top: -3px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  line-break: auto;
+  opacity: 0;
+  transition: opacity .15s linear;
+}
+
+.tooltip.in {
+  opacity: .9;
+}
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  border-color: transparent;
+  border-top-color: #000;
+  border-style: solid;
+  border-width: 5px 5px 0;
+}
+
+/* ==========================================================================
+   Site styles
+   ========================================================================== */
+
 /* Space out content a bit */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-/*override bootstrap so left and right column align vertically*/
+/*override the base styles so left and right column align vertically*/
 h4 {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -180,7 +593,7 @@ button:hover {
   }
 }
 
-/* Bootstrap puts white-space:nowrap on every cell inside .table-responsive
+/* The base styles put white-space:nowrap on every cell inside .table-responsive
    below 768px. That suits narrow numeric tables, but our Vortrag titles are
    long sentences, so it stretched the table to ~1000px and forced a lot of
    sideways scrolling. Let the text wrap again; the .table-responsive wrapper

@@ -7,7 +7,7 @@ have actually bitten this project before: an <a> "closed" with a self-closing
 slash instead of </a>, a table with <thead> written twice instead of closed,
 a stray </div> that closes a container early and pushes later markup outside
 it, and pages where <html>/<head> are missing or out of place. Never checks
-the vendored css/js/fonts (Bootstrap, jQuery).
+the css/js/media files.
 
 Deliberately standard-library only (html.parser, pathlib) so this runs on a
 bare ubuntu-latest GitHub Actions runner and on a plain Windows machine
@@ -49,7 +49,7 @@ VOID_ELEMENTS = {
 def find_target_files():
     """The project's own pages: the root pages and the 37 Vortrag pages.
 
-    Never the vendored css/js/fonts/media, and never the PDF slides under
+    Never the css/js/media files, and never the PDF slides under
     pdf/<year>/pdf/ (those aren't HTML at all).
     """
     files = sorted(REPO_ROOT.glob("*.html"))
