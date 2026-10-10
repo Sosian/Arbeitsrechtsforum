@@ -168,24 +168,6 @@ h6 { font-size: 12px; }
   margin-left: auto;
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -213,7 +195,7 @@ h6 { font-size: 12px; }
   padding-left: 15px;
 }
 
-@media (min-width: 1200px) {
+@media (width >= 1200px) {
   .col-lg-4,
   .col-lg-6,
   .col-lg-8 {
@@ -292,7 +274,7 @@ th {
   overflow-x: auto;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (width < 768px) {
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
@@ -385,12 +367,32 @@ th {
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+
+  /* A word or URL longer than the line (the AK link in the Impressum on a
+     320px phone) breaks instead of pushing the page sideways. break-word,
+     unlike anywhere, leaves table column widths alone. */
+  overflow-wrap: break-word;
 }
 
 /*override the base styles so left and right column align vertically*/
 h4 {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+/* "Arbeitskräfteüberlassung" at a fixed 30px is wider than a 320px phone and
+   pushed the whole page sideways, so the h2 shrinks with the screen and only
+   reaches its full 30px from about 430px up. Some Vortrag titles have single
+   words almost as long ("verwaltungsstrafrechtlichen"), so headings may also
+   be hyphenated where the browser has a German dictionary; elsewhere the
+   overflow-wrap on body breaks them mid-word rather than let them overflow. */
+h2 {
+  font-size: clamp(22px, 7vw, 30px);
+}
+
+h1, h2, h3 {
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .table-grey-background {
@@ -458,12 +460,16 @@ h4 {
 }
 
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 80%;
-  }
+/* Customize container: the full width on a phone, 80% of the window from
+   1200px up, at most 1170px. In between it grows steadily from 768px wide at a
+   768px window to 960px at 1200px, so it never jumps or gets narrower while
+   the window gets wider, as the old fixed 750/970/1170px widths plus
+   max-width:80% made it do at 768px and 992px. */
+.container {
+  width: min(100%, max(80%, calc(768px + (100vw - 768px) * 4 / 9)), 1170px);
+}
 
+@media (width >= 768px) {
   .table {
     width: 95%;
   }
@@ -476,11 +482,10 @@ h4 {
 }
 
 /* The navigation stacks wherever the columns stack. The columns start
-   floating at min-width:1200px, so this has to stop just below it: at a plain
-   1200px both queries would match at once and the navigation would stack
-   beside columns already side by side, and at 1199px a fractional viewport
-   width such as 1199.5px would fall between the two and do the opposite. */
-@media (max-width: 1199.98px) {
+   floating at width >= 1200px, and width < 1200px is its exact complement:
+   no width, fractional ones like 1199.5px included, matches both or neither,
+   which max-width could only approximate with 1199.98px. */
+@media (width < 1200px) {
   .topnav {
     position: relative;
     margin-top: 20px;
@@ -506,7 +511,7 @@ h4 {
    to normal. Neither is here any more: cells wrap on their own, and the
    .table-responsive wrapper still catches anything that genuinely does not
    fit. */
-@media screen and (max-width: 767px) {
+@media screen and (width < 768px) {
 
   /* The long compounds ("Arbeitskräfteüberlassung") are on their own wider than
      a column on a phone, so they have to be split somewhere. hyphens:auto lets
